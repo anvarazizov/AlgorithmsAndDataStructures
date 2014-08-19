@@ -21,6 +21,7 @@
 		11B398A019A371D00059E5F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B3988219A371D00059E5F2 /* UIKit.framework */; };
 		11B398A819A371D00059E5F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11B398A619A371D00059E5F2 /* InfoPlist.strings */; };
 		11B398AA19A371D00059E5F2 /* AlgorithmsAndDataStructuresTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B398A919A371D00059E5F2 /* AlgorithmsAndDataStructuresTests.m */; };
+		11B398B519A389990059E5F2 /* SuffixArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B398B419A389990059E5F2 /* SuffixArray.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		11B398A519A371D00059E5F2 /* AlgorithmsAndDataStructuresTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlgorithmsAndDataStructuresTests-Info.plist"; sourceTree = "<group>"; };
 		11B398A719A371D00059E5F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		11B398A919A371D00059E5F2 /* AlgorithmsAndDataStructuresTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmsAndDataStructuresTests.m; sourceTree = "<group>"; };
+		11B398B319A389990059E5F2 /* SuffixArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuffixArray.h; sourceTree = "<group>"; };
+		11B398B419A389990059E5F2 /* SuffixArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuffixArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				11B3989019A371D00059E5F2 /* Main.storyboard */,
 				11B3989319A371D00059E5F2 /* ViewController.h */,
 				11B3989419A371D00059E5F2 /* ViewController.m */,
+				11B398B319A389990059E5F2 /* SuffixArray.h */,
+				11B398B419A389990059E5F2 /* SuffixArray.m */,
 				11B3989619A371D00059E5F2 /* Images.xcassets */,
 				11B3988519A371D00059E5F2 /* Supporting Files */,
 			);
@@ -249,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11B398B519A389990059E5F2 /* SuffixArray.m in Sources */,
 				11B3989519A371D00059E5F2 /* ViewController.m in Sources */,
 				11B3988F19A371D00059E5F2 /* AppDelegate.m in Sources */,
 				11B3988B19A371D00059E5F2 /* main.m in Sources */,

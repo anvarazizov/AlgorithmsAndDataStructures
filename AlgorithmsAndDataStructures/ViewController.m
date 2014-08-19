@@ -8,6 +8,12 @@
 
 #import "ViewController.h"
 
+struct Suffixes
+{
+    NSInteger index;
+    NSInteger suff;
+} suffix;
+
 @interface ViewController ()
 
 @end
