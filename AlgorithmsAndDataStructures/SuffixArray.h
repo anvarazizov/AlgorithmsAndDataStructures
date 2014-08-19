@@ -11,8 +11,9 @@
 @interface SuffixArray : NSObject
 
 @property (nonatomic, strong) NSString * text;
-@property (nonatomic, strong, readonly) NSArray * indexes;
+@property (nonatomic, strong) NSArray * indexes;
 
-- (void)getTextFromIndex:(NSInteger )index;
+- (id)initWithText:(NSString *)text;
+- (void)textFromIndex:(NSInteger )index;
 
 @end

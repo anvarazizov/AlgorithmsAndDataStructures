@@ -7,12 +7,7 @@
 //
 
 #import "ViewController.h"
-
-struct Suffixes
-{
-    NSInteger index;
-    NSInteger suff;
-} suffix;
+#import "SuffixArray.h"
 
 @interface ViewController ()
 
@@ -24,6 +19,9 @@ struct Suffixes
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	
+	SuffixArray * suffixArray = [[SuffixArray alloc] initWithText:@"banana"];
+	NSLog(@"%@", suffixArray.indexes);
 }
 
 - (void)didReceiveMemoryWarning
