@@ -47,9 +47,12 @@
 	self.indexes = arrayWithIndexes;
 }
 
-- (void)textFromIndex:(NSInteger )index
+- (NSString *)textFromIndex:(NSInteger )index
 {
+	NSRange range = NSMakeRange(index, self.text.length - index);
+	NSString * text = [self.text substringWithRange:range];
 	
+	return text;
 }
 
 @end

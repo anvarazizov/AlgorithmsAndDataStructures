@@ -14,6 +14,6 @@
 @property (nonatomic, strong) NSArray * indexes;
 
 - (id)initWithText:(NSString *)text;
-- (void)textFromIndex:(NSInteger )index;
+- (NSString *)textFromIndex:(NSInteger )index;
 
 @end

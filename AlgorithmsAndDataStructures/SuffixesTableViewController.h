@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SuffixesTableViewController.h
 //  AlgorithmsAndDataStructures
 //
 //  Created by Anvar Azizov on 14/08/19.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SuffixesTableViewController : UITableViewController
 
 @end
