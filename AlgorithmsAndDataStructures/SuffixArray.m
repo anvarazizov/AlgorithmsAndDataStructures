@@ -28,15 +28,23 @@
 - (void)createArrayFromString:(NSString *)string
 {
 	NSMutableArray * arrayFromString = [[NSMutableArray alloc] initWithCapacity:string.length];
-
+	NSMutableArray * sortedArrayWithSuffixes = [[NSMutableArray alloc] initWithCapacity:string.length];
+	NSMutableArray * arrayWithIndexes = [[NSMutableArray alloc] initWithCapacity:string.length];
+	
 	for (int i = 0; i < string.length; i++)
 	{
 		NSRange range = NSMakeRange(i, string.length - i);
 		NSString * suffix = [string substringWithRange:range];
 		[arrayFromString insertObject:suffix atIndex:i];
+		sortedArrayWithSuffixes = [NSMutableArray arrayWithArray:[arrayFromString sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
 	}
 	
-	self.indexes = [arrayFromString sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+	for (int i = 0; i < string.length; i++)
+	{
+		[arrayWithIndexes insertObject:[NSNumber numberWithInteger:[arrayFromString indexOfObject:sortedArrayWithSuffixes[i]]] atIndex:i];
+	}
+	
+	self.indexes = arrayWithIndexes;
 }
 
 - (void)textFromIndex:(NSInteger )index
