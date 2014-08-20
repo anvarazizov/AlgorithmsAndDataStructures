@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     
-    self.suffixArray = [[SuffixArray alloc] initWithText:@"tintinnabulation"];
+    self.suffixArray = [[SuffixArray alloc] initWithText:@"abrakadabra"];
 }
 
 - (void)didReceiveMemoryWarning

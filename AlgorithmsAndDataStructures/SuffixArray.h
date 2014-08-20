@@ -10,7 +10,7 @@
 
 @interface SuffixArray : NSObject
 
-@property (nonatomic, strong) NSString * text;
+@property (nonatomic, strong, readonly) NSString * text;
 @property (nonatomic, strong) NSArray * indexes;
 
 - (id)initWithText:(NSString *)text;

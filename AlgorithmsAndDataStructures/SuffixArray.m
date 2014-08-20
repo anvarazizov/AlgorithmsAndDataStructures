@@ -18,8 +18,8 @@
 {
 	if (self = [super init])
 	{
-		self.text = text;
-		[self createArrayFromString:self.text];
+		_text = text;
+		[self createArrayFromString:_text];
 	}
 	
 	return self;
@@ -27,30 +27,25 @@
 
 - (void)createArrayFromString:(NSString *)string
 {
-	NSMutableArray * arrayFromString = [[NSMutableArray alloc] initWithCapacity:string.length];
-	NSMutableArray * sortedArrayWithSuffixes = [[NSMutableArray alloc] initWithCapacity:string.length];
-	NSMutableArray * arrayWithIndexes = [[NSMutableArray alloc] initWithCapacity:string.length];
+	NSInteger length = string.length;
+	NSMutableArray * arrayFromString = [[NSMutableArray alloc] initWithCapacity:length];
 	
-	for (int i = 0; i < string.length; i++)
+	for (int index = 0; index < length; ++index)
 	{
-		NSRange range = NSMakeRange(i, string.length - i);
-		NSString * suffix = [string substringWithRange:range];
-		[arrayFromString insertObject:suffix atIndex:i];
-		sortedArrayWithSuffixes = [NSMutableArray arrayWithArray:[arrayFromString sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
+		[arrayFromString addObject:[NSNumber numberWithInteger:index]];
 	}
 	
-	for (int i = 0; i < string.length; i++)
-	{
-		[arrayWithIndexes insertObject:[NSNumber numberWithInteger:[arrayFromString indexOfObject:sortedArrayWithSuffixes[i]]] atIndex:i];
-	}
+	[arrayFromString sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+		return [[self textFromIndex:[obj1 integerValue]] compare:[self textFromIndex:[obj2 integerValue]]];
+	}];
 	
-	self.indexes = arrayWithIndexes;
+	self.indexes = arrayFromString;
 }
 
 - (NSString *)textFromIndex:(NSInteger )index
 {
-	NSRange range = NSMakeRange(index, self.text.length - index);
-	NSString * text = [self.text substringWithRange:range];
+	NSRange range = NSMakeRange(index, _text.length - index);
+	NSString * text = [_text substringWithRange:range];
 	
 	return text;
 }
